@@ -1,0 +1,11 @@
+{
+    "name": "slides",
+    "version": "0.1.0",
+    "authors": [
+        "Benoit Sautel"
+    ],
+    "description": "A presentation regarding tests in software development",
+    "dependencies": {
+        "reveal.js": "2.6.2"
+    }
+}
