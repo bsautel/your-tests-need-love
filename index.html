@@ -39,89 +39,95 @@
             </ul>
         </section>
         <section>
-            <h2>Single Responsibility Principle</h2>
+            <section>
+                <h2>Single Responsibility Principle</h2>
 
-            <p>Une classe ne doit faire qu'une seule chose</p>
+                <p>Une classe ne doit faire qu'une seule chose</p>
+            </section>
+            <section>
+                <h2>Conséquences</h2>
+                <ul>
+                    <li>Un seul niveau d'abstraction par classe</li>
+                    <li>Une classe n'a pas plus d'une raison de changer</li>
+                    <li>Cohésion fonctionnelle (au sens LCOM4)</li>
+                    <li>Beaucoup de délégation</li>
+                    <li>Nommage simple et explicite</li>
+                    <li>Peu de méthodes publiques (idéalement une)</li>
+                    <li>100 lignes maximum</li>
+                    <li>Facilement réutilisable</li>
+                </ul>
+            </section>
+            <section>
+                <h2>En cas de non-respect</h2>
+                <ul>
+                    <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
+                    <li>Besoin de tester une méthode privée</li>
+                    <li>Changements fréquents donc refactoring</li>
+                    <li>Difficile à substituer dans un test</li>
+                </ul>
+            </section>
         </section>
         <section>
-            <h2>Conséquences</h2>
-            <ul>
-                <li>Un seul niveau d'abstraction par classe</li>
-                <li>Une classe n'a pas plus d'une raison de changer</li>
-                <li>Cohésion fonctionnelle (au sens LCOM4)</li>
-                <li>Beaucoup de délégation</li>
-                <li>Nommage simple et explicite</li>
-                <li>Peu de méthodes publiques (idéalement une)</li>
-                <li>100 lignes maximum</li>
-                <li>Facilement réutilisable</li>
-            </ul>
-        </section>
-        <section>
-            <h2>En cas de non-respect</h2>
-            <ul>
-                <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
-                <li>Besoin de tester une méthode privée</li>
-                <li>Changements fréquents donc refactoring</li>
-                <li>Difficile à substituer dans un test</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Dependency Inversion Principle</h2>
+            <section>
+                <h2>Dependency Inversion Principle</h2>
 
-            <p>Une classe ne doit pas avoir de couplage avec les implémentations de ses dépendances (délégation)</p>
-        </section>
-        <section>
-            <h2>Conséquences</h2>
-            <ul>
-                <li>Demande toutes ses dépendances dans le constructeur</li>
-                <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
-                <li>Utilisable dans d'autres contextes</li>
-            </ul>
-        </section>
-        <section>
-            <h2>En cas de non respect</h2>
-            <ul>
-                <li>Moins réutilisable</li>
-                <li>Difficilement testable (pas de substitution possible des collaborateurs)</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Astuce</h2>
+                <p>Une classe ne doit pas avoir de couplage avec les implémentations de ses dépendances (délégation)</p>
+            </section>
+            <section>
+                <h2>Conséquences</h2>
+                <ul>
+                    <li>Demande toutes ses dépendances dans le constructeur</li>
+                    <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
+                    <li>Utilisable dans d'autres contextes</li>
+                </ul>
+            </section>
+            <section>
+                <h2>En cas de non respect</h2>
+                <ul>
+                    <li>Moins réutilisable</li>
+                    <li>Difficilement testable (pas de substitution possible des collaborateurs)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Astuce</h2>
 
-            <p>Utiliser un outil d'injection de dépendance (Guice ou Spring en Java)</p>
+                <p>Utiliser un outil d'injection de dépendance (Guice ou Spring en Java)</p>
+            </section>
         </section>
         <section>
-            <h2>Liskov Substitution Principle</h2>
+            <section>
+                <h2>Liskov Substitution Principle</h2>
 
-            <p>Un type doit toujours pouvoir être remplacé par un sous type sans changer la sémantique du code</p>
-        </section>
-        <section>
-            <h2>Conséquences</h2>
-            <ul>
-                <li>Héritage seulement si polymorphisme</li>
-                <li>L'héritage ne doit pas servir à partager du code</li>
-            </ul>
-        </section>
-        <section>
-            <h2>En cas de non respect</h2>
-            <ul>
-                <li>Carré / rectangle</li>
-                <li>
-                    <pre><code>throw new UnsupportedOperationException();</code></pre>
-                </li>
-                <li>Fort couplage entre classes d'un arbre d'héritage</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Astuce</h2>
+                <p>Un type doit toujours pouvoir être remplacé par un sous type sans changer la sémantique du code</p>
+            </section>
+            <section>
+                <h2>Conséquences</h2>
+                <ul>
+                    <li>Héritage seulement si polymorphisme</li>
+                    <li>L'héritage ne doit pas servir à partager du code</li>
+                </ul>
+            </section>
+            <section>
+                <h2>En cas de non respect</h2>
+                <ul>
+                    <li>Carré / rectangle</li>
+                    <li>
+                        <pre><code>throw new UnsupportedOperationException();</code></pre>
+                    </li>
+                    <li>Fort couplage entre classes d'un arbre d'héritage</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Astuce</h2>
 
-            <p>Privilégier l'héritage de comportement à l'héritage d'état</p>
+                <p>Privilégier l'héritage de comportement à l'héritage d'état</p>
 
-            <p>En Java / PHP :</p>
-            <ul>
-                <li>Privilégier <em>implements</em> à <em>extends</em></li>
-                <li>Eviter les classes abstraites, utiliser plutôt le pattern strategy</li>
-            </ul>
+                <p>En Java / PHP :</p>
+                <ul>
+                    <li>Privilégier <em>implements</em> à <em>extends</em></li>
+                    <li>Eviter les classes abstraites, utiliser plutôt le pattern strategy</li>
+                </ul>
+            </section>
         </section>
         <section>
             <h2>Interface segregation principle</h2>
