@@ -118,7 +118,7 @@
         <ul>
             <li>Carré / rectangle</li>
             <li>
-                <pre><code>throw new UnsupportedOperationException();</code></pre>
+                <pre><code class="java">throw new UnsupportedOperationException();</code></pre>
             </li>
             <li>Fort couplage entre classes d'un arbre d'héritage</li>
         </ul>
@@ -208,7 +208,12 @@
     <section>
         <h2>Rules</h2>
     </section>
-    <section>Assertions</section>
+    <section>
+        <h2>Assertions</h2>
+        <pre><code class="java">assertThat(france.getCapital(), is("Paris"));</code></pre>
+        <pre><code class="java">assertThat(france.getThreeBiggestCities(), contains("Paris", "Marseille", "Lyon"));
+assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon", "Paris"));</code></pre>
+    </section>
 </section>
 <section data-background="https://farm5.staticflickr.com/4112/5408763997_c61bd40b1f_o.jpg">
     <!-- https://www.flickr.com/photos/30998987@N03/5408763997 -->
