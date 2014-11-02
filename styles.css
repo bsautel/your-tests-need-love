@@ -7,3 +7,8 @@
     border-radius: 7px;
     padding: 30px;
 }
+
+.reveal section blockquote, .reveal section pre {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+}

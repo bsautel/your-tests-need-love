@@ -13,6 +13,10 @@
 <section data-background="images/coeur.jpg">
     <!-- https://www.flickr.com/photos/albertize/6204540828 -->
     <h2>Vos tests ont besoin d'amour</h2>
+    <aside class="notes">
+        Message à faire passer : soignez vos tests et ils vous le rendront.
+        Voilà des conseils qui permettent de le faire.
+    </aside>
 </section>
 <section data-background="images/clavier.jpg">
     <h2>Benoit Sautel</h2>
@@ -22,17 +26,55 @@
 <section data-background="images/A350-XWB-water-ingestion-test-Istres.jpg">
     <!-- http://www.airbus.com/galleries/photo-gallery/dg/idp/38707-a350-xwb-water-ingestion-test-istres-2/?share=1 -->
     <h2>Tester</h2>
+    <aside class="notes">
+        <ul>
+            <li>Toute l'industrie doit tester. L'humain n'est pas infaillible.</li>
+            <li>Aéronautique pour des raisons de sécurité et de maintenance des avions</li>
+            <li>Cas nominal / cas limites</li>
+            <li>Dématérialisation qui nous aide. Nous avons la possibilité de tester à moindre coût et automatiquement.</li>
+        </ul>
+    </aside>
 </section>
 <!-- Symptomes des tests malades -->
 <section data-background="images/daltons.jpg">
     <!-- https://www.flickr.com/photos/krancien/3784919632 -->
     <h2>Quand tester devient une corvée</h2>
+    <aside class="notes">
+        <ul>
+            <li>De base le développeur n'aime pas tester</li>
+            <li>Pas prioritaire parce que n'apporte pas de valeur directe</li>
+            <li>Vite fait mal fait</li>
+            <li>Résultat : les tests font perdre du temps. Pas rentables</li>
+            <li>Instables, lents, personne ne s'en occupe</li>
+            <li>Difficile à tester</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/mont-blanc.jpg">
     <!-- https://www.flickr.com/photos/twiga_269/11242674334 -->
     <h2>Tester du code testable</h2>
     <aside class="notes">
-        Problème de conception
+        <ul>
+            <li>Le code n'est pas testable par nature</li>
+            <li>Du code pas testable est souvent mal conçu</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/reutilisable.jpg">
+    <!-- https://www.flickr.com/photos/molotalk/3305001454 -->
+    <h2>Réutilisable</h2>
+    <aside class="notes">
+        Code testable = code réutilisable
+    </aside>
+</section>
+<section data-background="images/clean.jpg">
+    <!-- https://www.flickr.com/photos/marine_corps/5559327652 -->
+    <h2>Clean code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Ensemble de bonnes pratiques qui permettent de faire du bon code.</li>
+            <li>Bon code = code testable entre autres</li>
+        </ul>
     </aside>
 </section>
 <section data-background="images/saint-honorat.jpg">
@@ -167,83 +209,145 @@
 <section data-background="images/loeb-virage.jpg">
     <!-- https://www.flickr.com/photos/johnnytsunami/5562042553 -->
     <h2>Fast</h2>
+    <aside class="notes">
+        Feedback rapide. Exécution de l'ensemble des tests aussi.
+    </aside>
 </section>
 <section data-background="images/autonome.jpg">
     <!-- https://www.flickr.com/photos/68818882@N06/10330744014 -->
     <h2>Independant</h2>
+    <aside class="notes">
+        Autonome, ne dépend pas de l'exécution des autres. N'importe que ordre.
+    </aside>
 </section>
 <section data-background="images/tables.jpg">
     <!-- https://www.flickr.com/photos/andraspfaff/2858826101 -->
     <h2>Repeatable</h2>
+    <aside class="notes">
+        Marche en toutes circonstances (machine, charge, configuration...).
+    </aside>
 </section>
 <section data-background="images/servers.png">
     <!-- https://www.flickr.com/photos/zunami/3780218641 -->
     <h2>Self-validating</h2>
+    <aside class="notes">
+        Pas d'intervention humaine nécessaire. Automatique.
+    </aside>
 </section>
 <section data-background="images/horloge.jpg">
     <!-- https://www.flickr.com/photos/jfgornet/3132953696 -->
     <h2>Timely</h2>
+    <aside class="notes">
+        Dans la même temporalité que le code associé. Pas un mois après.
+    </aside>
 </section>
 <section data-background="images/rails.jpg">
     <!-- https://www.flickr.com/photos/olibac/2759936514 -->
     <h2>Test Driven Development</h2>
+    <aside class="notes">
+        <ul>
+            <li>Cas adaptés : algorithme</li>
+            <li>Cas moins adaptés : design au fur et à mesure du développement</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/microscope.jpg">
     <!-- https://www.flickr.com/photos/liverpoolhls/10740309163 -->
     <h2>Au plus près du code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Près du code testé</li>
+            <li>Ne pas avoir besoin de débugger pour comprendre où c'est cassé</li>
+            <li>Par expérience : code bien testé unitairement fonctionne</li>
+            <li>Tests d'intégration ok mais c'est plus compliqué / long</li>
+        </ul>
+    </aside>
 </section>
+<!-- Tests simples -->
 <section data-background="images/crash-test.jpg">
     <!-- https://www.flickr.com/photos/30998987@N03/5408763997 -->
     <h2>Faire échouer le test</h2>
+    <aside class="notes">
+        <ul>
+            <li>S'assurer que le test est bien joué</li>
+            <li>Modifier le code pour le faire échouer</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/cameleon.jpg">
     <!-- https://www.flickr.com/photos/sergiu_bacioiu/4485931477 -->
     <h2>Mock ou pas mock ?</h2>
     <!-- http://martinfowler.com/articles/mocksArentStubs.html -->
-    <ul>
-        <li>Fake objects</li>
-        <li>Stubs</li>
-        <li>Mocks</li>
-    </ul>
+    <aside class="notes">
+        <p>Le mock n'est pas la solution à tout :</p>
+        <ul>
+            <li>Fake objects</li>
+            <li>Stubs</li>
+            <li>Mocks</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/sieste.jpg">
     <!-- https://www.flickr.com/photos/jpott/5657591809 -->
     <h2>Code asynchrone</h2>
-
-    <ul>
-        <li>Eviter le code asynchrone</li>
-        <li>Utiliser des outils de test asynchrone pour faire de l'attente active</li>
-    </ul>
+    <aside class="notes">
+        <ul>
+            <li>Eviter le code asynchrone</li>
+            <li>Si c'est nécessaire proposer un moyen de savoir quand l'action est terminée</li>
+            <li>Utiliser des outils de test asynchrone pour faire de l'attente active</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/outils.jpg">
     <!-- https://www.flickr.com/photos/pennuja/5364128968/in/photostream/ -->
     <section>
         <h2>Exploitez les outils</h2>
+        <aside class="notes">
+            <ul>
+                <li>Bases de données en mémoire</li>
+                <li>Rules JUnit : par exemple partage d'initialisation</li>
+            </ul>
+        </aside>
     </section>
     <section>
-        <h2>Rules</h2>
-    </section>
-    <section>
-        <h2>Assertions</h2>
+        <h2>Assertions puissantes et naturelles</h2>
         <pre><code class="java">assertThat(france.getCapital(), is("Paris"));</code></pre>
         <pre><code class="java">assertThat(france.getThreeBiggestCities(), contains("Paris", "Marseille", "Lyon"));
 assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon", "Paris"));</code></pre>
+        <aside class="notes">Exemple : hamcrest / fest assert en Java</aside>
     </section>
-</section>
-<section>
-    <h2>Analyser la pertinence des tests</h2>
 </section>
 <section data-background="images/couverture.jpg">
     <!-- https://www.flickr.com/photos/dvailhe/3690493057 -->
     <h2>Couverture de code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Code effectivement exécuté pendant les tests</li>
+            <li>Couverture 100% pas forcément un objectif</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/cellules.jpg">
     <!-- https://www.flickr.com/photos/kaibara/4966621857 -->
     <h2>Mutation de code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Que couvre vraiment mon code ?</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/commando.jpg">
     <!-- https://www.flickr.com/photos/dvids/5915310417 -->
     <h2>Et dans la vraie vie ?</h2>
+    <aside class="notes">
+        <ul>
+            <li>Mission commando</li>
+            <li>Code pas testable</li>
+            <li>Commencer par du code autonome, testable et testé</li>
+            <li>Ensuite vous aurez plus de recul pour comprendre ce qui va pas et le corriger</li>
+            <li>Vidéos de Sandro Mancuso et David Gageot</li>
+        </ul>
+    </aside>
 </section>
 </div>
 </div>
