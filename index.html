@@ -10,10 +10,11 @@
 <body>
 <div class="reveal">
 <div class="slides">
-<section data-background="images/coeur.jpg">
+<section data-background="images/coeur.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/albertize/6204540828 -->
     <h2>Vos tests ont besoin d'amour</h2>
     <aside class="notes">
+        Soyez testophiles.
         Message à faire passer : soignez vos tests et ils vous le rendront.
         Voilà des conseils qui permettent de le faire.
     </aside>
@@ -36,7 +37,7 @@
     </aside>
 </section>
 <!-- Symptomes des tests malades -->
-<section data-background="images/daltons.jpg">
+<section data-background="images/daltons.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/krancien/3784919632 -->
     <h2>Quand tester devient une corvée</h2>
     <aside class="notes">
@@ -50,11 +51,14 @@
         </ul>
     </aside>
 </section>
-<section data-background="images/school.jpg">
+<section data-background="images/school.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/thoseguys119/11278399635 -->
     <h2>Tester, ça s'apprend</h2>
+    <aside class="notes">
+        Ce n'est pas une fatalité. Apprendre techniques / méthodes.
+    </aside>
 </section>
-<section data-background="images/mont-blanc.jpg">
+<section data-background="images/mont-blanc.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/twiga_269/11242674334 -->
     <h2>Tester du code testable</h2>
     <aside class="notes">
@@ -86,25 +90,29 @@
     </section>
     <section>
         <h2>Conséquences</h2>
-        <ul>
-            <li>Un seul niveau d'abstraction par classe</li>
-            <li>Une classe n'a pas plus d'une raison de changer</li>
-            <li>Cohésion fonctionnelle (au sens LCOM4)</li>
-            <li>Beaucoup de délégation</li>
-            <li>Nommage simple et explicite</li>
-            <li>Peu de méthodes publiques (idéalement une)</li>
-            <li>100 lignes maximum</li>
-            <li>Facilement réutilisable</li>
-        </ul>
+        <blockquote>
+            <ul>
+                <li>Un seul niveau d'abstraction par classe</li>
+                <li>Une classe n'a pas plus d'une raison de changer</li>
+                <li>Cohésion fonctionnelle (au sens LCOM4)</li>
+                <li>Beaucoup de délégation</li>
+                <li>Nommage simple et explicite</li>
+                <li>Peu de méthodes publiques (idéalement une)</li>
+                <li>100 lignes maximum</li>
+                <li>Facilement réutilisable</li>
+            </ul>
+        </blockquote>
     </section>
     <section>
         <h2>En cas de non-respect</h2>
-        <ul>
-            <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
-            <li>Besoin de tester une méthode privée</li>
-            <li>Changements fréquents donc refactoring</li>
-            <li>Difficile à substituer dans un test</li>
-        </ul>
+        <blockquote>
+            <ul>
+                <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
+                <li>Besoin de tester une méthode privée</li>
+                <li>Changements fréquents donc refactoring</li>
+                <li>Difficile à substituer dans un test</li>
+            </ul>
+        </blockquote>
     </section>
 </section>
 <section data-background="images/injection.jpg">
@@ -118,19 +126,23 @@
     </section>
     <section>
         <h2>Conséquences</h2>
-        <ul>
-            <li>Demande toutes ses dépendances dans le constructeur</li>
-            <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
-            <li>Utilisable dans d'autres contextes</li>
-            <li>Attention aux fonctions ou méthodes statiques</li>
-        </ul>
+        <blockquote>
+            <ul>
+                <li>Demande toutes ses dépendances dans le constructeur</li>
+                <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
+                <li>Utilisable dans d'autres contextes</li>
+                <li>Attention aux fonctions ou méthodes statiques</li>
+            </ul>
+        </blockquote>
     </section>
     <section>
         <h2>En cas de non respect</h2>
-        <ul>
-            <li>Moins réutilisable</li>
-            <li>Difficilement testable (pas de substitution possible des collaborateurs)</li>
-        </ul>
+        <blockquote>
+            <ul>
+                <li>Moins réutilisable</li>
+                <li>Difficilement testable (pas de substitution possible des collaborateurs)</li>
+            </ul>
+        </blockquote>
     </section>
     <section>
         <h2>Injection de dépendances</h2>
@@ -149,20 +161,24 @@
     </section>
     <section>
         <h2>Conséquences</h2>
-        <ul>
-            <li>Héritage seulement si polymorphisme</li>
-            <li>L'héritage ne doit pas servir à partager du code</li>
-        </ul>
+        <blockquote>
+            <ul>
+                <li>Héritage seulement si polymorphisme</li>
+                <li>L'héritage ne doit pas servir à partager du code</li>
+            </ul>
+        </blockquote>
     </section>
     <section>
         <h2>En cas de non respect</h2>
-        <ul>
-            <li>Carré / rectangle</li>
-            <li>
-                <pre><code class="java">throw new UnsupportedOperationException();</code></pre>
-            </li>
-            <li>Fort couplage entre classes d'un arbre d'héritage</li>
-        </ul>
+        <blockquote>
+            <ul>
+                <li>Carré / rectangle</li>
+                <li>
+                    <pre><code class="java">throw new UnsupportedOperationException();</code></pre>
+                </li>
+                <li>Fort couplage entre classes d'un arbre d'héritage</li>
+            </ul>
+        </blockquote>
     </section>
     <section>
         <h2>Astuce</h2>
@@ -196,11 +212,11 @@
     <!-- https://www.flickr.com/photos/ogimogi/2223450729 -->
     <h2>Des tests efficaces</h2>
 </section>
-<section data-background="images/loeb-vainqueur.jpg">
+<section data-background="images/loeb-vainqueur.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/sumofmarc/6344633404 -->
     <h2>FIRST</h2>
 </section>
-<section data-background="images/loeb-virage.jpg">
+<section data-background="images/loeb-virage.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/johnnytsunami/5562042553 -->
     <h2>Fast</h2>
     <aside class="notes">
@@ -277,9 +293,9 @@
         </ul>
     </aside>
 </section>
-<section data-background="images/cameleon.jpg">
+<section data-background="images/cameleon.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/sergiu_bacioiu/4485931477 -->
-    <h2>Mock ou pas mock ?</h2>
+    <h2>To mock or not to mock?</h2>
     <!-- http://martinfowler.com/articles/mocksArentStubs.html -->
     <aside class="notes">
         <p>Le mock n'est pas la solution à tout :</p>
@@ -320,7 +336,7 @@ assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon
         <aside class="notes">Exemple : hamcrest / fest assert en Java</aside>
     </section>
 </section>
-<section data-background="images/couverture.jpg">
+<section data-background="images/couverture.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/dvailhe/3690493057 -->
     <h2>Couverture de code</h2>
     <aside class="notes">
@@ -339,7 +355,7 @@ assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon
         </ul>
     </aside>
 </section>
-<section data-background="images/commando.jpg">
+<section data-background="images/commando.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/dvids/5915310417 -->
     <h2>Et dans la vraie vie ?</h2>
     <aside class="notes">
@@ -352,7 +368,7 @@ assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon
         </ul>
     </aside>
 </section>
-<section data-background="images/clean.jpg">
+<section data-background="images/clean.jpg" class="bottom">
     <!-- https://www.flickr.com/photos/marine_corps/5559327652 -->
     <h2>Nettoyer au fur et à mesure</h2>
     <aside class="notes">
@@ -372,6 +388,7 @@ assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon
 <script type="text/javascript">Reveal.initialize({
     history: true,
     transition: 'fade',
+    center: false,
     dependencies: [
         { src: 'bower_components/reveal.js/plugin/highlight/highlight.js',
             async: true,
