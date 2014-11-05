@@ -3,16 +3,18 @@
 }
 
 .reveal [data-background] h2 {
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 7px;
     padding: 30px;
 }
 
-.reveal section blockquote, .reveal section pre {
-    background-color: rgba(255, 255, 255, 0.6);
+.reveal section blockquote, .reveal section pre, .reveal [data-background] h2 {
+    background-color: rgba(255, 255, 255, 0.75);
     border-radius: 7px;
 }
 
 .reveal .slides section.bottom {
-    top: 25%;
+    top: 20%;
+}
+
+.reveal .slides section .top_spacer {
+    top: 300px;
 }
