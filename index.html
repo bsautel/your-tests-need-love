@@ -5,7 +5,8 @@
     <title>Vos tests ont besoin d'amour</title>
     <link type="text/css" rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css"/>
     <link type="text/css" rel="stylesheet" href="bower_components/reveal.js/css/theme/sky.css"/>
-    <link type="text/css" rel="stylesheet" href="styles.css"/>
+    <link type="text/css" rel="stylesheet" href="css/zenburn.css"/>
+    <link type="text/css" rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 <div class="reveal">
@@ -75,73 +76,46 @@
     </blockquote>
 </section>
 <section data-background="images/two-many-responsibilities.jpg">
-    <section>
-        <h2>Single Responsibility Principle</h2>
+    <h2>Single Responsibility Principle</h2>
 
-        <blockquote class="top_spacer">
-            Une classe ne doit faire qu'une seule chose
-        </blockquote>
-    </section>
-    <section>
-        <h2>Conséquences</h2>
-        <blockquote>
-            <ul>
-                <li>Un seul niveau d'abstraction par classe</li>
-                <li>Une classe n'a pas plus d'une raison de changer</li>
-                <li>Cohésion fonctionnelle (au sens LCOM4)</li>
-                <li>Beaucoup de délégation</li>
-                <li>Nommage simple et explicite</li>
-                <li>Peu de méthodes publiques (idéalement une)</li>
-                <li>100 lignes maximum</li>
-                <li>Facilement réutilisable</li>
-            </ul>
-        </blockquote>
-    </section>
-    <section>
-        <h2>En cas de non-respect</h2>
-        <blockquote>
-            <ul>
-                <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
-                <li>Besoin de tester une méthode privée</li>
-                <li>Changements fréquents donc refactoring</li>
-                <li>Difficile à substituer dans un test</li>
-            </ul>
-        </blockquote>
-    </section>
+    <blockquote class="top_spacer">
+        Une classe ne doit faire qu'une seule chose
+    </blockquote>
+    <aside class="notes">
+        <ul style="font-size: 15px;">
+            <li>Une classe n'a pas plus d'une raison de changer</li>
+            <li>Un seul niveau d'abstraction par classe</li>
+            <li>Cohésion fonctionnelle (au sens LCOM4)</li>
+            <li>Beaucoup de délégation</li>
+            <li>Nommage simple et explicite</li>
+            <li>Peu de méthodes publiques (idéalement une)</li>
+            <li>100 lignes maximum</li>
+            <li>Facilement réutilisable</li>
+        </ul>
+        <ul style="font-size: 15px;">
+            <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
+            <li>Besoin de tester une méthode privée</li>
+            <li>Changements fréquents donc refactoring</li>
+            <li>Difficile à substituer dans un test</li>
+        </ul>
+    </aside>
 </section>
 <section data-background="images/injection.jpg">
-    <section>
-        <h2>Dependency Inversion Principle</h2>
+    <h2>Dependency Inversion Principle</h2>
 
-        <blockquote class="top_spacer">
-            Une classe ne doit pas avoir de couplage avec les implémentations de ses dépendances (délégation)
-        </blockquote>
-    </section>
-    <section>
-        <h2>Conséquences</h2>
-        <blockquote>
-            <ul>
-                <li>Demande toutes ses dépendances dans le constructeur</li>
-                <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
-                <li>Utilisable dans d'autres contextes</li>
-                <li>Attention aux fonctions ou méthodes statiques</li>
-            </ul>
-        </blockquote>
-    </section>
-    <section>
-        <h2>En cas de non respect</h2>
-        <blockquote>
-            <ul>
-                <li>Moins réutilisable</li>
-                <li>Difficilement testable (pas de substitution possible des collaborateurs)</li>
-            </ul>
-        </blockquote>
-    </section>
-    <section>
-        <h2>Injection de dépendances</h2>
-
-        <blockquote>Spring, Guice, ...</blockquote>
-    </section>
+    <blockquote class="top_spacer">
+        Une classe ne doit pas avoir de couplage avec les implémentations de ses dépendances (délégation)
+    </blockquote>
+    <aside class="notes">
+        <p>Conséquences</p>
+        <ul>
+            <li>Demande toutes ses dépendances dans le constructeur</li>
+            <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
+            <li>Utilisable dans d'autres contextes</li>
+            <li>Attention aux fonctions ou méthodes statiques</li>
+        </ul>
+        <p>Injection de dépendances</p>
+    </aside>
 </section>
 <section data-background="images/remplacement.jpg">
     <section>
@@ -150,38 +124,109 @@
         <blockquote class="top_spacer">
             Un type doit toujours pouvoir être remplacé par un sous type sans changer la sémantique du code
         </blockquote>
-    </section>
-    <section>
-        <h2>Conséquences</h2>
-        <blockquote>
+        <aside class="notes">
+            <p>Conséquences</p>
             <ul>
                 <li>Héritage seulement si polymorphisme</li>
                 <li>L'héritage ne doit pas servir à partager du code</li>
             </ul>
-        </blockquote>
+            <p>Non respect : Carré rectangle</p>
+        </aside>
     </section>
     <section>
-        <h2>En cas de non respect</h2>
-        <blockquote>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Rectangle {
+    private final int width;
+    private final int weight;
+
+    public Rectangle(int width, int weight) {
+        this.width = width;
+        this.weight = weight;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+}</code></pre>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Square extends Rectangle {
+    public Square(int side) {
+        super(side, side);
+    }
+}</code></pre>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Rectangle {
+    private int width;
+    private int height;
+
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+}</code></pre>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Square extends Rectangle {
+    public Square(int size) {
+        super(size, size);
+    }
+
+    @Override
+    public void setWidth(int width) {
+        super.setWidth(width);
+        // What about the height?
+    }
+
+    @Override
+    public void setHeight(int height) {
+        super.setHeight(height);
+        // What about the width?
+    }
+}</code></pre>
+        <aside class="notes">
             <ul>
-                <li>Carré / rectangle</li>
                 <li>
-                    <pre><code class="java">throw new UnsupportedOperationException();</code></pre>
+                    throw new UnsupportedOperationException();
                 </li>
                 <li>Fort couplage entre classes d'un arbre d'héritage</li>
             </ul>
-        </blockquote>
+        </aside>
     </section>
     <section>
-        <h2>Astuce</h2>
+            <h2>Comportement / état</h2>
 
-        <p>Privilégier l'héritage de comportement à l'héritage d'état</p>
-
-        <p>En Java / PHP :</p>
-        <ul>
-            <li>Privilégier <em>implements</em> à <em>extends</em></li>
-            <li>Eviter les classes abstraites, utiliser plutôt le pattern strategy</li>
-        </ul>
+        <aside class="notes">
+            <p>En Java / PHP (modèle héritage unique):</p>
+            <ul>
+                <li>Privilégier <em>implements</em> à <em>extends</em></li>
+                <li>Eviter les classes abstraites, utiliser plutôt le pattern strategy</li>
+            </ul>
+        </aside>
     </section>
 </section>
 <section data-background="images/projection.jpg">
@@ -306,10 +351,12 @@
         </aside>
     </section>
     <section>
-        <h2>Assertions puissantes et naturelles</h2>
+        <h2>Assertions</h2>
         <pre><code class="java">assertThat(france.getCapital(), is("Paris"));</code></pre>
-        <pre><code class="java">assertThat(france.getThreeBiggestCities(), contains("Paris", "Marseille", "Lyon"));
-assertThat(france.getThreeBiggestCities(), containsInAnyOrder("Marseille", "Lyon", "Paris"));</code></pre>
+        <pre><code class="java">assertThat(france.getThreeBiggestCities(),
+                        contains("Paris", "Marseille", "Lyon"));
+assertThat(france.getThreeBiggestCities(),
+                        containsInAnyOrder("Marseille", "Lyon", "Paris"));</code></pre>
         <aside class="notes">Exemple : hamcrest / fest assert en Java</aside>
     </section>
 </section>
