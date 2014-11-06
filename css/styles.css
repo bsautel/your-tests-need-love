@@ -28,7 +28,7 @@
     border: 0;
 }
 
-.half-width {
-    width: 50%;
+.three-columns {
+    width: 33%;
     display: inline-block;
 }
