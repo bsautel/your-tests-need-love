@@ -38,7 +38,7 @@
     <h2>Tester</h2>
     <aside class="notes">
         <ul>
-            <li>Toute l'industrie doit tester. L'humain n'est pas infaillible.</li>
+            <li>L'humain n'est pas infaillible. Toute l'industrie doit tester.</li>
             <li>Aéronautique pour des raisons de sécurité et de maintenance des avions</li>
             <li>Cas nominal / cas limites</li>
             <li>Dématérialisation qui nous aide. Nous avons la possibilité de tester à moindre coût et automatiquement.</li>
@@ -220,18 +220,14 @@
     }
 }</code></pre>
         <aside class="notes">
-            <ul>
-                <li>
-                    throw new UnsupportedOperationException();
-                </li>
-                <li>Fort couplage entre classes d'un arbre d'héritage</li>
-            </ul>
+            <p>throw new UnsupportedOperationException();</p>
         </aside>
     </section>
     <section>
             <h2>Comportement / état</h2>
 
         <aside class="notes">
+            <p>Fort couplage entre classes du même arbre d'héritage</p>
             <p>En Java / PHP (modèle héritage unique):</p>
             <ul>
                 <li>Privilégier <em>implements</em> à <em>extends</em></li>
