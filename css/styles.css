@@ -6,7 +6,8 @@
     padding: 30px;
 }
 
-.reveal section blockquote, .reveal section pre, .reveal [data-background] h2 {
+.reveal section[data-background] blockquote, .reveal section[data-background] pre, .reveal section[data-background] h2,
+.logos {
     background-color: rgba(255, 255, 255, 0.75);
     border-radius: 7px;
 }
@@ -15,6 +16,19 @@
     top: 20%;
 }
 
-.reveal .slides section .top_spacer {
+.reveal .slides section .top-spacer {
     top: 300px;
+}
+
+.reveal section .logos {
+    margin-top: 50px;
+}
+
+.reveal section .logos img {
+    border: 0;
+}
+
+.half-width {
+    width: 50%;
+    display: inline-block;
 }
