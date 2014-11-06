@@ -26,6 +26,8 @@
 
 .reveal section .logos img {
     border: 0;
+    background: none;
+    box-shadow: none;
 }
 
 .three-columns {
