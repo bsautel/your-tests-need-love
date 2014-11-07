@@ -2,11 +2,11 @@ package inheritance.no;
 
 public class Rectangle {
     private int width;
-    private int height;
+    private int length;
 
-    public Rectangle(int width, int height) {
+    public Rectangle(int width, int length) {
         this.width = width;
-        this.height = height;
+        this.length = length;
     }
 
     public int getWidth() {
@@ -17,11 +17,11 @@ public class Rectangle {
         this.width = width;
     }
 
-    public int getHeight() {
-        return height;
+    public int getLength() {
+        return length;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setLength(int length) {
+        this.length = length;
     }
 }

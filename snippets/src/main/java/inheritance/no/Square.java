@@ -1,19 +1,19 @@
 package inheritance.no;
 
 public class Square extends Rectangle {
-    public Square(int size) {
-        super(size, size);
+    public Square(int length) {
+        super(length, length);
     }
 
     @Override
     public void setWidth(int width) {
         super.setWidth(width);
-        // What about the height?
+        // What about the length?
     }
 
     @Override
-    public void setHeight(int height) {
-        super.setHeight(height);
+    public void setLength(int length) {
+        super.setLength(length);
         // What about the width?
     }
 }

@@ -2,15 +2,15 @@ package inheritance.yes;
 
 public class Rectangle {
     private final int width;
-    private final int weight;
+    private final int length;
 
-    public Rectangle(int width, int weight) {
+    public Rectangle(int width, int length) {
         this.width = width;
-        this.weight = weight;
+        this.length = length;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getLength() {
+        return length;
     }
 
     public int getWidth() {

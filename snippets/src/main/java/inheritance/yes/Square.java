@@ -1,7 +1,7 @@
 package inheritance.yes;
 
 public class Square extends Rectangle {
-    public Square(int side) {
-        super(side, side);
+    public Square(int length) {
+        super(length, length);
     }
 }
