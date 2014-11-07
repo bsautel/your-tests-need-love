@@ -20,7 +20,7 @@
     </aside>
 </section>
 <section data-background="images/clavier.jpg">
-    <h2>Benoit Sautel</h2>
+    <h2>Benoît Sautel</h2>
     <blockquote>Développeur passionné</blockquote>
     <div class="logos">
         <div><a href="http://www.antidot.net/"><img src="images/antidot.png" alt="Antidot" /></a></div>
@@ -135,7 +135,7 @@
         <h2>Liskov Substitution Principle</h2>
 
         <blockquote class="top-spacer">
-            Un type doit toujours pouvoir être remplacé par un sous type sans changer la sémantique du code
+            Un type doit toujours pouvoir être remplacé par un sous-type sans changer la sémantique du code
         </blockquote>
         <aside class="notes">
             <p>Conséquences</p>
@@ -150,15 +150,15 @@
         <h2>Carré / Rectangle</h2>
         <pre><code class="java">public class Rectangle {
     private final int width;
-    private final int weight;
+    private final int length;
 
-    public Rectangle(int width, int weight) {
+    public Rectangle(int width, int length) {
         this.width = width;
-        this.weight = weight;
+        this.length = length;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getLength() {
+        return length;
     }
 
     public int getWidth() {
@@ -169,20 +169,20 @@
     <section>
         <h2>Carré / Rectangle</h2>
         <pre><code class="java">public class Square extends Rectangle {
-    public Square(int side) {
-        super(side, side);
+    public Square(int length) {
+        super(length, length);
     }
 }</code></pre>
     </section>
     <section>
         <h2>Carré / Rectangle</h2>
         <pre><code class="java">public class Rectangle {
-    private int width;
-    private int height;
+    private int width;length
+    private int length;
 
-    public Rectangle(int width, int height) {
+    public Rectangle(int width, int length) {
         this.width = width;
-        this.height = height;
+        this.length = length;
     }
 
     public int getWidth() {
@@ -193,12 +193,12 @@
         this.width = width;
     }
 
-    public int getHeight() {
-        return height;
+    public int getLength() {
+        return length;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setLength(int length) {
+        this.length = length;
     }
 }</code></pre>
     </section>
@@ -212,12 +212,12 @@
     @Override
     public void setWidth(int width) {
         super.setWidth(width);
-        // What about the height?
+        // What about the length?
     }
 
     @Override
-    public void setHeight(int height) {
-        super.setHeight(height);
+    public void setLength(int length) {
+        super.setLength(length);
         // What about the width?
     }
 }</code></pre>
@@ -313,7 +313,7 @@
     <h2>Simples et bien nommés</h2>
     <blockquote class="top-spacer">
         <ul>
-            <li><strong>Should</strong> return the user <strong>when</strong> it exists</li>
+            <li><strong>Should</strong> return the user <strong>when</strong> the user exists</li>
             <li><strong>Should</strong> return a not found error <strong>when</strong> the user does not exist</li>
         </ul>
     </blockquote>
