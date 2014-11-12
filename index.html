@@ -16,8 +16,6 @@
     <aside class="notes">
         Soyez testophiles.
         Personnes qui aiment les tests et leur donnent de l'amour.
-        Message à faire passer : soignez vos tests et ils vous le rendront.
-        Conseils et astuces qui permettent de le faire.
         Questions à la fin.
     </aside>
 </section>
@@ -44,7 +42,7 @@
     <h2>Tester</h2>
     <aside class="notes">
         <ul>
-            <li>L'humain n'est pas infaillible. Toute l'industrie doit tester.</li>
+            <li>Toute l'industrie doit tester. L'humain n'est pas infaillible.</li>
             <li>Aéronautique pour des raisons de sécurité et de maintenance des avions</li>
             <li>Cas nominal / cas limites</li>
             <li>Si nous ne testons pas, bugs à répétition, productivité diminue petit à petit. On finit par tout jeter et refaire.</li>
@@ -61,7 +59,6 @@
             <li>Vite fait mal fait</li>
             <li>Résultat : les tests font perdre du temps. Pas rentables</li>
             <li>Instables, lents, personne ne s'en occupe</li>
-            <li>Difficile à tester</li>
         </ul>
     </aside>
 </section>
@@ -73,12 +70,7 @@
 </section>
 <section data-background="images/mont-blanc.jpg" class="bottom">
     <h2>Tester du code testable</h2>
-    <aside class="notes">
-        <ul>
-            <li>Le code n'est pas testable par nature</li>
-            <li>Du code pas testable est souvent mal conçu</li>
-        </ul>
-    </aside>
+    <aside class="notes">Le code n'est pas testable par nature</aside>
 </section>
 <section data-background="images/reutilisable.jpg">
     <h2>Réutilisable</h2>
@@ -104,7 +96,6 @@
         <ul style="font-size: 15px;">
             <li>Une classe n'a pas plus d'une raison de changer</li>
             <li>Un seul niveau d'abstraction par classe</li>
-            <li>Cohésion fonctionnelle (au sens LCOM4)</li>
             <li>Beaucoup de délégation</li>
             <li>Nommage simple et explicite</li>
             <li>Peu de méthodes publiques (idéalement une)</li>
@@ -116,8 +107,8 @@
             <li>Besoin de tester une méthode privée</li>
             <li>Changements fréquents donc refactoring</li>
             <li>Difficile à substituer dans un test</li>
+            <li>Vous trouvez que c'est beaucoup ? Objects calisthenics</li>
         </ul>
-        Vous trouvez que c'est beaucoup ? Objects calisthenics
     </aside>
 </section>
 <section data-background="images/injection.jpg">
@@ -184,7 +175,7 @@
     <section>
         <h2>Carré / Rectangle</h2>
         <pre><code class="java">public class Rectangle {
-    private int width;length
+    private int width;
     private int length;
 
     public Rectangle(int width, int length) {
@@ -275,7 +266,7 @@
 <section data-background="images/autonome.jpg">
     <h2>Independant</h2>
     <aside class="notes">
-        Autonome, ne dépend pas de l'exécution des autres. N'importe que ordre.
+        Autonome, ne dépend pas de l'exécution des autres. Pas de base de données par exemple. N'importe que ordre.
     </aside>
 </section>
 <section data-background="images/tables.jpg">
@@ -338,11 +329,13 @@
 <section data-background="images/cameleon.jpg" class="bottom">
     <h2>Mock ou pas mock ?</h2>
     <aside class="notes">
-        <p>Le mock n'est pas la solution à tout :</p>
+        <p>Mock = magie. Ce n'est pas la solution à tout.</p>
+        <p>Solutions pour subsituer un objet:</p>
         <ul>
-            <li>Fake objects</li>
-            <li>Stubs</li>
-            <li>Mocks</li>
+            <li>Real object</li>
+            <li>Fake object</li>
+            <li>Stub</li>
+            <li>Mock</li>
         </ul>
     </aside>
 </section>
@@ -351,6 +344,7 @@
     <aside class="notes">
         <ul>
             <li>Eviter le code asynchrone</li>
+            <li>Si asynchrone, surtout ne pas faire la sieste !</li>
             <li>Si c'est nécessaire proposer un moyen de savoir quand l'action est terminée</li>
             <li>Utiliser des outils de test asynchrone pour faire de l'attente active</li>
         </ul>
@@ -391,6 +385,7 @@ assertThat(biggestCities).containsOnly("Marseille", "Lyon", "Paris");</code></pr
         <ul>
             <li>Code effectivement exécuté pendant les tests</li>
             <li>Couverture 100% pas forcément un objectif</li>
+            <li>Ligne converte n'implique pas ligne bien testée</li>
         </ul>
     </aside>
 </section>
