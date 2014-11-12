@@ -212,8 +212,8 @@
     <section>
         <h2>Carré / Rectangle</h2>
         <pre><code class="java">public class Square extends Rectangle {
-    public Square(int size) {
-        super(size, size);
+    public Square(int length) {
+        super(length, length);
     }
 
     @Override
@@ -368,12 +368,21 @@
     </section>
     <section>
         <h2>Assertions</h2>
-        <pre><code class="java">assertThat(france.getCapital(), is("Paris"));</code></pre>
-        <pre><code class="java">assertThat(france.getThreeBiggestCities(),
-                        contains("Paris", "Marseille", "Lyon"));
-assertThat(france.getThreeBiggestCities(),
-                        containsInAnyOrder("Marseille", "Lyon", "Paris"));</code></pre>
-        <aside class="notes">Exemple : hamcrest / fest assert en Java</aside>
+        <pre><code class="java">assertThat(france.getCapital()).isEqualTo("Paris");</code></pre>
+        <pre><code class="java">assertThat(france.getPopulation())
+        .isGreaterThan(65000000)
+        .isLessThan(70000000);</code></pre>
+        <pre><code class="java">List&lt;String&gt; biggestCities = france.getThreeBiggestCities();
+
+// At least
+assertThat(biggestCities).contains("Paris", "Marseille");
+
+// Exactly
+assertThat(biggestCities).containsExactly("Paris", "Marseille", "Lyon");
+
+// Only but in any order
+assertThat(biggestCities).containsOnly("Marseille", "Lyon", "Paris");</code></pre>
+        <aside class="notes">Exemple : AssertJ en Java</aside>
     </section>
 </section>
 <section data-background="images/couverture.jpg" class="bottom">
