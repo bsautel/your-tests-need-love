@@ -1,0 +1,36 @@
+.reveal h2 {
+    font-weight: bold;
+}
+
+.reveal [data-background] h2 {
+    padding: 30px;
+}
+
+.reveal section[data-background] blockquote, .reveal section[data-background] pre, .reveal section[data-background] h2,
+.logos {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 7px;
+}
+
+.reveal .slides section.bottom {
+    top: 20%;
+}
+
+.reveal .slides section .top-spacer {
+    top: 300px;
+}
+
+.reveal section .logos {
+    margin-top: 50px;
+}
+
+.reveal section .logos img {
+    border: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.three-columns {
+    width: 33%;
+    display: inline-block;
+}

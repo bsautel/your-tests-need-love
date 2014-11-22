@@ -5,168 +5,510 @@
     <title>Vos tests ont besoin d'amour</title>
     <link type="text/css" rel="stylesheet" href="bower_components/reveal.js/css/reveal.min.css"/>
     <link type="text/css" rel="stylesheet" href="bower_components/reveal.js/css/theme/sky.css"/>
+    <link type="text/css" rel="stylesheet" href="css/zenburn.css"/>
+    <link type="text/css" rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
 <div class="reveal">
-    <div class="slides">
-        <section>
-            <h2>Vos tests ont besoin d'amour</h2>
+<div class="slides">
+<section data-background="images/coeur.jpg" class="bottom">
+    <h2>Vos tests ont besoin d'amour</h2>
+    <aside class="notes">
+        Soyez testophiles.
+        Personnes qui aiment les tests et leur donnent de l'amour.
+        Questions à la fin.
+    </aside>
+</section>
+<section data-background="images/clavier.jpg">
+    <h2>Benoit Sautel</h2>
+    <blockquote>Développeur passionné</blockquote>
+    <div class="logos">
+        <div><a href="http://www.antidot.net/"><img src="images/antidot.png" alt="Antidot" /></a></div>
+        <div><a href="http://www.phpboost.com/"><img src="images/phpboost.png" alt="PHPBoost" /></a></div>
+        <div class="three-columns">
+            <p><img src="images/twitter.png" alt="Twitter"/></p>
+            <p><a href="https://twitter.com/bsautel">@bsautel</a></p>
+        </div><div class="three-columns">
+            <p><a href="http://www.fierdecoder.fr">fierdecoder.fr</a></p>
+        </div><div class="three-columns">
+            <p><img src="images/github.png" alt="GitHub"/></p>
+            <p><a href="https://github.com/bsautel">bsautel</a></p>
+        </div>
+    </div>
+    <aside class="notes">Evangélisaion en génie logciel</aside>
+</section>
+<section data-background="images/A350-XWB-water-ingestion-test-Istres.jpg">
+    <h2>Tester</h2>
+    <aside class="notes">
+        <ul>
+            <li>Toute l'industrie doit tester. L'humain n'est pas infaillible.</li>
+            <li>Aéronautique pour des raisons de sécurité et de maintenance des avions</li>
+            <li>Cas nominal / cas limites</li>
+            <li>Si nous ne testons pas, bugs à répétition, productivité diminue petit à petit. On finit par tout jeter et refaire.</li>
+            <li>Pourtant, la dématérialisation nous aide. Nous avons la possibilité de tester à moindre coût et automatiquement.</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/daltons.jpg" class="bottom">
+    <h2>Quand tester devient une corvée</h2>
+    <aside class="notes">
+        <ul>
+            <li>De base le développeur n'aime pas tester</li>
+            <li>Pas prioritaire parce que n'apporte pas de valeur directe</li>
+            <li>Vite fait mal fait</li>
+            <li>Résultat : les tests font perdre du temps. Pas rentables</li>
+            <li>Instables, lents, personne ne s'en occupe</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/school.jpg" class="bottom">
+    <h2>Tester, ça s'apprend</h2>
+    <aside class="notes">
+        Ce n'est pas une fatalité. Apprendre techniques / méthodes.
+    </aside>
+</section>
+<section data-background="images/mont-blanc.jpg" class="bottom">
+    <h2>Tester du code testable</h2>
+    <aside class="notes">Le code n'est pas testable par nature</aside>
+</section>
+<section data-background="images/reutilisable.jpg">
+    <h2>Réutilisable</h2>
+    <aside class="notes">
+        Code testable = code réutilisable
+    </aside>
+</section>
+<section data-background="images/saint-honorat.jpg">
+    <h2>SOLID</h2>
 
-            <p>Benoit Sautel - développeur</p>
-        </section>
-        <section>
-            <h2>Tester son code</h2>
+    <blockquote class="top-spacer">
+        Les 5 principes fondamentaux de la programmation orientée objet
+    </blockquote>
+    <aside class="notes">Un principe par lettre. Pas dans l'ordre.</aside>
+</section>
+<section data-background="images/two-many-responsibilities.jpg">
+    <h2>Single Responsibility Principle</h2>
 
-            <p>Oui, mais comment ?</p>
-        </section>
-        <!-- Symptomes des tests malades -->
-        <section>
-            <h2>Tester du code testable</h2>
-            <aside class="notes">
-                Problème de conception
-            </aside>
-        </section>
-        <section>
-            <h2>SOLID</h2>
+    <blockquote class="top-spacer">
+        Une classe ne doit faire qu'une seule chose
+    </blockquote>
+    <aside class="notes">
+        <ul style="font-size: 15px;">
+            <li>Une classe n'a pas plus d'une raison de changer</li>
+            <li>Un seul niveau d'abstraction par classe</li>
+            <li>Beaucoup de délégation</li>
+            <li>Nommage simple et explicite</li>
+            <li>Peu de méthodes publiques (idéalement une)</li>
+            <li>100 lignes maximum</li>
+            <li>Facilement réutilisable</li>
+        </ul>
+        <ul style="font-size: 15px;">
+            <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
+            <li>Besoin de tester une méthode privée</li>
+            <li>Changements fréquents donc refactoring</li>
+            <li>Difficile à substituer dans un test</li>
+            <li>Vous trouvez que c'est beaucoup ? Objects calisthenics</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/injection.jpg">
+    <h2>Dependency Inversion Principle</h2>
 
-            <p>Les 5 principes fondamentaux de la programmation orientée objet</p>
-            <ul>
-                <li><strong>S</strong>ingle Responsibility Principle</li>
-                <li><strong>O</strong>pen Closed Principle</li>
-                <li><strong>L</strong>iskov Substitution Principle</li>
-                <li><strong>I</strong>nterface Segregation Principle</li>
-                <li><strong>D</strong>ependency Inversion Principle</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Single Responsibility Principle</h2>
+    <blockquote class="top-spacer">
+        Une classe ne doit pas avoir de couplage avec les implémentations de ses dépendances (délégation)
+    </blockquote>
+    <aside class="notes">
+        <p>Conséquences</p>
+        <ul>
+            <li>Demande toutes ses dépendances dans le constructeur</li>
+            <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
+            <li>Utilisable dans d'autres contextes</li>
+            <li>Attention aux fonctions ou méthodes statiques</li>
+        </ul>
+        <p>Injection de dépendances</p>
+    </aside>
+</section>
+<section data-background="images/remplacement.jpg">
+    <section>
+        <h2>Liskov Substitution Principle</h2>
 
-            <p>Une classe ne doit faire qu'une seule chose</p>
-        </section>
-        <section>
-            <h2>Conséquences</h2>
-            <ul>
-                <li>Un seul niveau d'abstraction par classe</li>
-                <li>Une classe n'a pas plus d'une raison de changer</li>
-                <li>Cohésion fonctionnelle (au sens LCOM4)</li>
-                <li>Beaucoup de délégation</li>
-                <li>Nommage simple et explicite</li>
-                <li>Peu de méthodes publiques (idéalement une)</li>
-                <li>100 lignes maximum</li>
-                <li>Facilement réutilisable</li>
-            </ul>
-        </section>
-        <section>
-            <h2>En cas de non-respect</h2>
-            <ul>
-                <li>Difficulté pour nommer la classe autrement que <em>XxxManager</em></li>
-                <li>Besoin de tester une méthode privée</li>
-                <li>Changements fréquents donc refactoring</li>
-                <li>Difficile à substituer dans un test</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Dependency Inversion Principle</h2>
-
-            <p>Une classe ne doit pas avoir de couplage avec les implémentations de ses dépendances (délégation)</p>
-        </section>
-        <section>
-            <h2>Conséquences</h2>
-            <ul>
-                <li>Demande toutes ses dépendances dans le constructeur</li>
-                <li>C'est à l'appelant de choisir les collaborateurs (inversion de contrôle)</li>
-                <li>Utilisable dans d'autres contextes</li>
-            </ul>
-        </section>
-        <section>
-            <h2>En cas de non respect</h2>
-            <ul>
-                <li>Moins réutilisable</li>
-                <li>Difficilement testable (pas de substitution possible des collaborateurs)</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Astuce</h2>
-
-            <p>Utiliser un outil d'injection de dépendance (Guice ou Spring en Java)</p>
-        </section>
-        <section>
-            <h2>Liskov Substitution Principle</h2>
-
-            <p>Un type doit toujours pouvoir être remplacé par un sous type sans changer la sémantique du code</p>
-        </section>
-        <section>
-            <h2>Conséquences</h2>
+        <blockquote class="top-spacer">
+            Un type doit toujours pouvoir être remplacé par un sous-type sans changer la sémantique du code
+        </blockquote>
+        <aside class="notes">
+            <p>Conséquences</p>
             <ul>
                 <li>Héritage seulement si polymorphisme</li>
                 <li>L'héritage ne doit pas servir à partager du code</li>
             </ul>
-        </section>
-        <section>
-            <h2>En cas de non respect</h2>
-            <ul>
-                <li>Carré / rectangle</li>
-                <li>
-                    <pre><code>throw new UnsupportedOperationException();</code></pre>
-                </li>
-                <li>Fort couplage entre classes d'un arbre d'héritage</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Astuce</h2>
+            <p>Non respect : Carré rectangle</p>
+        </aside>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Rectangle {
+    private final int width;
+    private final int length;
 
-            <p>Privilégier l'héritage de comportement à l'héritage d'état</p>
+    public Rectangle(int width, int length) {
+        this.width = width;
+        this.length = length;
+    }
 
-            <p>En Java / PHP :</p>
+    public int getLength() {
+        return length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+}</code></pre>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Square extends Rectangle {
+    public Square(int length) {
+        super(length, length);
+    }
+}</code></pre>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Rectangle {
+    private int width;
+    private int length;
+
+    public Rectangle(int width, int length) {
+        this.width = width;
+        this.length = length;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+}</code></pre>
+    </section>
+    <section>
+        <h2>Carré / Rectangle</h2>
+        <pre><code class="java">public class Square extends Rectangle {
+    public Square(int length) {
+        super(length, length);
+    }
+
+    @Override
+    public void setWidth(int width) {
+        super.setWidth(width);
+        // What about the length?
+    }
+
+    @Override
+    public void setLength(int length) {
+        super.setLength(length);
+        // What about the width?
+    }
+}</code></pre>
+        <aside class="notes">
+            <p>throw new UnsupportedOperationException();</p>
+        </aside>
+    </section>
+    <section>
+            <h2>Comportement / état</h2>
+
+        <aside class="notes">
+            <p>Fort couplage entre classes du même arbre d'héritage</p>
+            <p>En Java / PHP (modèle héritage unique):</p>
             <ul>
                 <li>Privilégier <em>implements</em> à <em>extends</em></li>
                 <li>Eviter les classes abstraites, utiliser plutôt le pattern strategy</li>
             </ul>
-        </section>
-        <section>
-            <h2>Interface segregation principle</h2>
+        </aside>
+    </section>
+</section>
+<section data-background="images/projection.jpg">
+    <h2>Interface segregation principle</h2>
 
-            <p>Un client d'une classe ne devrait pas dépendre de méthodes qu'il n'utilise pas</p>
-        </section>
-        <section><h2>Open Closed Principle</h2>
+    <blockquote class="top-spacer">
+        Un client d'une classe ne doit pas dépendre de méthodes qu'il n'utilise pas
+    </blockquote>
+</section>
+<section data-background="images/peage.jpg">
+    <h2>Open Closed Principle</h2>
 
-            <p>Une classe doit être ouverte à l'extension mais fermée à la modification</p></section>
-        <section data-background="http://upload.wikimedia.org/wikipedia/fr/a/a6/ViaducdeMillau.jpg">
-            <!-- http://fr.wikipedia.org/wiki/Fichier:ViaducdeMillau.jpg -->
-            <h2>Design patterns</h2>
-        </section>
-        <section>
-            <h2>Faire de bons tests</h2>
-        </section>
-        <section>
-            <h2>Au plus proche du code</h2>
-        </section>
-        <section>
-            <h2>Mock ou pas mock ?</h2>
-            <!-- http://martinfowler.com/articles/mocksArentStubs.html -->
+    <blockquote>Une classe doit être ouverte à l'extension mais fermée à la modification</blockquote>
+</section>
+<section data-background="images/viaduc-millau.jpg">
+    <h2>Design patterns</h2>
+</section>
+<section data-background="images/cible.jpg">
+    <h2>Des tests efficaces</h2>
+</section>
+<section data-background="images/loeb-vainqueur.jpg" class="bottom">
+    <h2>FIRST</h2>
+</section>
+<section data-background="images/loeb-virage.jpg" class="bottom">
+    <h2>Fast</h2>
+    <aside class="notes">
+        Feedback rapide. Exécution de l'ensemble des tests aussi.
+    </aside>
+</section>
+<section data-background="images/autonome.jpg">
+    <h2>Independant</h2>
+    <aside class="notes">
+        Autonome, ne dépend pas de l'exécution des autres. Pas de base de données par exemple. N'importe que ordre.
+    </aside>
+</section>
+<section data-background="images/tables.jpg">
+    <h2>Repeatable</h2>
+    <aside class="notes">
+        Marche en toutes circonstances (machine, charge, configuration...).
+    </aside>
+</section>
+<section data-background="images/servers.png">
+    <h2>Self-validating</h2>
+    <aside class="notes">
+        Pas d'intervention humaine nécessaire. Automatique.
+    </aside>
+</section>
+<section data-background="images/horloge.jpg">
+    <h2>Timely</h2>
+    <aside class="notes">
+        Dans la même temporalité que le code associé. Pas un mois après.
+    </aside>
+</section>
+<section data-background="images/rails.jpg">
+    <h2>Test Driven Development</h2>
+    <aside class="notes">
+        <ul>
+            <li>Cas adaptés : algorithme</li>
+            <li>Cas moins adaptés : design au fur et à mesure du développement</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/microscope.jpg">
+    <h2>Au plus près du code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Près du code testé</li>
+            <li>Ne pas avoir besoin de débugger pour comprendre où c'est cassé</li>
+            <li>Par expérience : code bien testé unitairement fonctionne</li>
+            <li>Tests d'intégration ok mais c'est plus compliqué / long</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/pipe.jpg">
+    <h2>Simples et bien nommés</h2>
+    <blockquote class="top-spacer">
+        <ul>
+            <li><strong>Should</strong> return the user <strong>when</strong> the user exists</li>
+            <li><strong>Should</strong> return a not found error <strong>when</strong> the user does not exist</li>
+        </ul>
+    </blockquote>
+    <aside class="notes">Parallèle avec le BDD (Behavior Driven Development)</aside>
+</section>
+<section data-background="images/crash-test.jpg">
+    <h2>Faire échouer le test</h2>
+    <aside class="notes">
+        <ul>
+            <li>S'assurer que le test est bien joué</li>
+            <li>Modifier le code pour le faire échouer</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/cameleon.jpg" class="bottom">
+    <h2>Mock ou pas mock ?</h2>
+    <aside class="notes">
+        <p>Mock = magie. Ce n'est pas la solution à tout.</p>
+        <p>Solutions pour subsituer un objet:</p>
+        <ul>
+            <li>Real object</li>
+            <li>Fake object</li>
+            <li>Stub</li>
+            <li>Mock</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/sieste.jpg">
+    <h2>Code asynchrone</h2>
+    <aside class="notes">
+        <ul>
+            <li>Eviter le code asynchrone</li>
+            <li>Si asynchrone, surtout ne pas faire la sieste !</li>
+            <li>Si c'est nécessaire proposer un moyen de savoir quand l'action est terminée</li>
+            <li>Utiliser des outils de test asynchrone pour faire de l'attente active</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/outils.jpg">
+    <section>
+        <h2>Exploitez les outils</h2>
+        <aside class="notes">
             <ul>
-                <li>Fake objects</li>
-                <li>Stubs</li>
-                <li>Mocks</li>
+                <li>Bases de données en mémoire</li>
+                <li>Rules JUnit : par exemple partage d'initialisation</li>
             </ul>
-        </section>
-        <section>
-            <h2>Don't sleep</h2>
+        </aside>
+    </section>
+    <section>
+        <h2>Assertions</h2>
+        <pre><code class="java">assertThat(france.getCapital()).isEqualTo("Paris");</code></pre>
+        <pre><code class="java">assertThat(france.getPopulation())
+        .isGreaterThan(65000000)
+        .isLessThan(70000000);</code></pre>
+        <pre><code class="java">List&lt;String&gt; biggestCities = france.getThreeBiggestCities();
 
-            <ul>
-                <li>Eviter le code asynchrome</li>
-                <li>Utiliser des outils de test asynchrone</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Faire échouer le test</h2>
-        </section>
-    </div>
+// At least
+assertThat(biggestCities).contains("Paris", "Marseille");
+
+// Exactly
+assertThat(biggestCities).containsExactly("Paris", "Marseille", "Lyon");
+
+// Only but in any order
+assertThat(biggestCities).containsOnly("Marseille", "Lyon", "Paris");</code></pre>
+        <aside class="notes">Exemple : AssertJ en Java</aside>
+    </section>
+</section>
+<section data-background="images/couverture.jpg" class="bottom">
+    <h2>Couverture de code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Code effectivement exécuté pendant les tests</li>
+            <li>Couverture 100% pas forcément un objectif</li>
+            <li>Ligne converte n'implique pas ligne bien testée</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/cellules.jpg">
+    <h2>Mutation de code</h2>
+    <aside class="notes">
+        <ul>
+            <li>Que couvre vraiment mon code ?</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/commando.jpg" class="bottom">
+    <h2>Et dans la vraie vie ?</h2>
+    <aside class="notes">
+        <ul>
+            <li>Mission commando</li>
+            <li>Code pas testable</li>
+            <li>Commencer par du code autonome, testable et testé</li>
+            <li>Ensuite vous aurez plus de recul pour comprendre ce qui va pas et le corriger</li>
+            <li>Vidéos de Sandro Mancuso et David Gageot</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/clean.jpg" class="bottom">
+    <h2>Nettoyer au fur et à mesure</h2>
+    <aside class="notes">
+        <ul>
+            <li>Ensemble de bonnes pratiques qui permettent de faire du bon code.</li>
+            <li>Bon code = code testable entre autres</li>
+        </ul>
+    </aside>
+</section>
+<section data-background="images/questions.jpg">
+</section>
+<section>
+    <h2>Présentation</h2>
+
+    <p>Réalisée avec <a href="https://github.com/hakimel/reveal.js">Reveal.js</a></p>
+    <p>Code source sur <a href="https://github.com/bsautel/your-tests-need-love">Github</a></p>
+    <p>Visible en ligne sur <a href="http://files.fierdecoder.fr/your-tests-need-love/">http://files.fierdecoder.fr/your-tests-need-love/</a></p>
+</section>
+<section>
+    <h2>Références externes</h2>
+    <p>Liens vers des pages web citées pendant la présentation.</p>
+    <ul>
+        <li><a href="https://parleys.com/play/535fa85be4b03397a8eee8e8/chapter0/about">Le bon testeur il teste.... et le mauvais testeur il teste aussi... </a></li>
+        <li><a href="https://www.youtube.com/watch?v=_NnElPO5BU0"> Testing and Refactoring Legacy Code par Sandro Mancuso</a></li>
+        <li><a href="https://www.youtube.com/watch?v=q11gydDAMSo">Du Legacy au Cloud en moins d'une heure par David Gageot</a></li>
+        <li><a href="http://martinfowler.com/articles/mocksArentStubs.html">Mocks Aren't Stubs par Martin Fowler</a></li>
+        <li><a href="http://www.jeromeradix.com/2012/05/lcom4-lack-of-cohesion-quatrieme.html">LCOM4 - Lack of Cohesion</a></li>
+    </ul>
+</section>
+<section>
+    <section>
+        <h2>Crédits photos</h2>
+    </section>
+    <section>
+        <h2>1/3</h2>
+        <ul>
+            <li><a href="https://www.flickr.com/photos/albertize/6204540828">Jets also need love</a></li>
+            <li><a href="https://www.flickr.com/photos/suzanne-helen/6652132205">Clavier</a></li>
+            <li>
+                <a href="http://www.airbus.com/galleries/photo-gallery/dg/idp/38707-a350-xwb-water-ingestion-test-istres-2/?share=1">A350
+                    XWB water ingestion test Istres 2</a></li>
+            <li><a href="https://www.flickr.com/photos/krancien/3784919632">Los Hermanos Dalton</a></li>
+            <li><a href="https://www.flickr.com/photos/thoseguys119/11278399635">First Student #333</a></li>
+            <li><a href="https://www.flickr.com/photos/twiga_269/11242674334">Mini-pause aux Bosses, 1hr10 avant le
+                Sommet</a></li>
+            <li><a href="https://www.flickr.com/photos/molotalk/3305001454">Recycled Paperboard Tube USB Drive 2</a>
+            </li>
+            <li><a href="https://www.flickr.com/photos/rzelazko/6754133857">Île Saint-Honorats Cytadel</a></li>
+            <li><a href="https://www.flickr.com/photos/klausonline/5510455925">Buried Alive</a></li>
+            <li><a href="https://www.flickr.com/photos/ringai/3173827605">Hypodermic syringe 3</a></li>
+            <li><a href="https://www.flickr.com/photos/marcp_dmoz/4205599261">Ronaldo substitutes Raul – Ronaldo
+                sustituye a
+                Raúl, Real Madrid HDR</a></li>
+            <li><a href="https://www.flickr.com/photos/bourguiboeuf/5425491249">En A. Bim!</a></li>
+        </ul>
+    </section>
+    <section>
+        <h2>2/3</h2>
+        <ul>
+            <li><a href="https://www.flickr.com/photos/reallyboring/3671903002">péage</a></li>
+            <li><a href="https://www.flickr.com/photos/declicjardin/1135509841">Viaduc de Millau</a></li>
+            <li><a href="https://www.flickr.com/photos/ogimogi/2223450729">Smack in the middle</a></li>
+            <li><a href="https://www.flickr.com/photos/sumofmarc/6344633404">Daniel Elena and Sebastien Loeb
+                celebrate</a>
+            </li>
+            <li><a href="https://www.flickr.com/photos/johnnytsunami/5562042553">Sébastien Loeb</a></li>
+            <li><a href="https://www.flickr.com/photos/68818882@N06/10330744014">IMOCA_MACIF_François_Gabart_Michel_Desjoyeaux_(c)Jean-Marie_Liot/DPPI/Macif</a>
+            </li>
+            <li><a href="https://www.flickr.com/photos/andraspfaff/2858826101">Repetition on Piazza San Marco</a></li>
+            <li><a href="https://www.flickr.com/photos/zunami/3780218641">IBM Server</a></li>
+            <li><a href="https://www.flickr.com/photos/jfgornet/3132953696">Horloge du Musée d'Orsay</a></li>
+            <li><a href="https://www.flickr.com/photos/olibac/2759936514">parallèles</a></li>
+            <li><a href="https://www.flickr.com/photos/liverpoolhls/10740309163">microscope</a></li>
+        </ul>
+    </section>
+    <section>
+        <h2>3/3</h2>
+        <ul>
+            <li><a href="http://fr.wikipedia.org/wiki/La_Trahison_des_images">La Trahison des images</a></li>
+            <li><a href="https://www.flickr.com/photos/30998987@N03/5408763997">Crash-Tested Volvo C30 Electric</a></li>
+            <li><a href="https://www.flickr.com/photos/sergiu_bacioiu/4485931477">Cameleon</a></li>
+            <li><a href="https://www.flickr.com/photos/jpott/5657591809">Sleeping in the Park</a></li>
+            <li><a href="https://www.flickr.com/photos/pennuja/5364128968">Swiss Army</a></li>
+            <li><a href="https://www.flickr.com/photos/dvailhe/3690493057">Lac Foréant</a></li>
+            <li><a href="https://www.flickr.com/photos/kaibara/4966621857">Red geranium petal cells</a></li>
+            <li><a href="https://www.flickr.com/photos/dvids/5915310417">Commandos, US find firefights, caches in
+                Kandahar</a></li>
+            <li><a href="https://www.flickr.com/photos/marine_corps/5559327652">Marines wash the surface of an F/A-18C
+                Hornet</a></li>
+            <li><a href="https://www.flickr.com/photos/lwr/13442910354">Question Mark</a></li>
+        </ul>
+    </section>
+</section>
+</div>
 </div>
 <script type="text/javascript" src="bower_components/reveal.js/lib/js/head.min.js"></script>
 <script type="text/javascript" src="bower_components/reveal.js/js/reveal.js"></script>
 <script type="text/javascript">Reveal.initialize({
     history: true,
+    transition: 'fade',
+    center: false,
     dependencies: [
         { src: 'bower_components/reveal.js/plugin/highlight/highlight.js',
             async: true,

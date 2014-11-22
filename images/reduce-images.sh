@@ -1,0 +1,1 @@
+for file in $(ls); do convert $file  -resize 2000x2000\> $file ; done
